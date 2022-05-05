@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    width: 90%;
+    width: 85%;
     margin-inline: auto;
     min-height: 100vh;
     display: flex;
@@ -12,7 +12,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     font-size: 43px;
     color: white;
     font-family: "Saira Stencil One", cursive;
@@ -27,7 +27,7 @@ const Form = styled.form`
 
 const Input = styled.input`
     width: 100%;
-    height: 50px;
+    height: 60px;
     border-radius: 7px;
     border: none;
     outline: none;
@@ -46,7 +46,7 @@ const Button = styled.button`
     width: 100%;
     height: 50%;
     color: white;
-    height: 50px;
+    height: 60px;
     border-radius: 7px;
     border: none;
     outline: none;

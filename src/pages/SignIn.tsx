@@ -1,24 +1,20 @@
-import {
-    Container,
-    Title,
-    Input,
-    Form,
-    Button,
-} from "../styles/components.style";
+import { Title, Input, Form, Button } from "../styles/components.style";
+import { SignInContainer as Container } from "../styles/pages/signIn.style";
 import { useState } from "react";
 import { ISignIn } from "../helpers/interfaces";
+import { Link } from "react-router-dom";
 
-export default function SignIn() {
-    const [signUpData, setSignUpData] = useState<ISignIn>({} as ISignIn);
+const SignIn: React.FC = () => {
+    const [signInData, setSignUpData] = useState<ISignIn>({} as ISignIn);
 
     const changeSignIn = (event: any) => {
         const target = event.target;
         if (target.name === "email") {
-            signUpData.email = target.value;
+            signInData.email = target.value;
         } else {
-            signUpData.password = target.value;
+            signInData.password = target.value;
         }
-        setSignUpData({ ...signUpData });
+        setSignUpData({ ...signInData });
     };
 
     const submitEvent: any = (event: Event) => {
@@ -44,8 +40,12 @@ export default function SignIn() {
                     onChange={changeSignIn}
                     required
                 />
-                <Button>SignIn</Button>
+                <Button>Sign In</Button>
             </Form>
+
+            <Link to="/signup">Primeira vez? Cadastre-se</Link>
         </Container>
     );
-}
+};
+
+export default SignIn;

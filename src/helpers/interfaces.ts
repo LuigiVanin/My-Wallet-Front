@@ -3,4 +3,11 @@ interface ISignIn {
     password: string;
 }
 
-export type { ISignIn };
+interface ISignUp {
+    name: string;
+    email: string;
+    password: string;
+    password2: string;
+}
+
+export type { ISignIn, ISignUp };
