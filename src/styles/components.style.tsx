@@ -31,14 +31,14 @@ const Input = styled.input`
     border-radius: 7px;
     border: none;
     outline: none;
-    color: black;
+    color: ${(props) => (!props.color ? "black" : props.color)};
     background-color: #ffffffb2;
     transition: all 0.3s ease-out;
     padding-inline: 25px;
     font-size: 21px;
 
     &:focus {
-        background-color: #fffffff4;
+        background-color: #fffffff9;
     }
 `;
 
@@ -46,7 +46,8 @@ const Button = styled.button`
     width: 100%;
     height: 50%;
     color: white;
-    height: 60px;
+    font-weight: bold;
+    height: 50px;
     border-radius: 7px;
     border: none;
     outline: none;
@@ -54,6 +55,7 @@ const Button = styled.button`
     cursor: pointer;
     background-color: #9b4abb;
     transition: all 0.2s ease-in-out;
+    font-family: "Raleway", sans-serif;
 
     &:hover {
         transform: scale(1.01);
