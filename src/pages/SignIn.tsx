@@ -25,7 +25,6 @@ const SignIn: React.FC = () => {
     const login = () => {
         const promise = api.post("sign-in", signInData);
         promise.then((response: AxiosResponse) => {
-            console.log(response);
             localStorage.setItem("token", response.data.token);
             context.setToken(response.data.token);
             context.setUser({

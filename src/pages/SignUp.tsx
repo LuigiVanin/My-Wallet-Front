@@ -21,7 +21,6 @@ const SignUp: React.FC = () => {
     const signUp = () => {
         const promise = api.post("/sign-up", signUpData);
         promise.then((response: AxiosResponse) => {
-            console.log(response);
             return navigate("/");
         });
         promise.catch((err) => {

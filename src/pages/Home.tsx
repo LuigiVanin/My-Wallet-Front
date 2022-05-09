@@ -26,7 +26,6 @@ const Home: React.FC = () => {
             };
             const promise = api.get("/transfer", config);
             promise.then((response: AxiosResponse) => {
-                // console.log(response);
                 setTransfers(response.data as any[]);
             });
             promise.catch((err) => {

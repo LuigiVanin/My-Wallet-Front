@@ -5,8 +5,6 @@ import TransferItem from "./TransferItem";
 import { convertToDecimal } from "../helpers/utils";
 
 const TransfersPanel: React.FC<TransferProps> = ({ transfers }) => {
-    console.log(transfers);
-
     const calcTotal = () => {
         let sum = 0;
         transfers?.forEach((item) => {

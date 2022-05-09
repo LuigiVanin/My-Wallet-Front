@@ -1,42 +1,6 @@
 import styled from "styled-components";
 import { Container } from "../components.style";
 
-const Header = styled.header`
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    left: 0;
-    right: 0px;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* background-color: blue; */
-    /* background-color: white; */
-    /* padding-inline: 15px; */
-
-    svg {
-        color: white;
-    }
-
-    nav {
-        /* background: red; */
-        height: 60px;
-        width: 92%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    h1 {
-        width: 70%;
-        /* background-color: red; */
-        color: white;
-        font-size: 23px;
-        font-weight: bold;
-    }
-`;
-
 const HomeContainer = styled(Container)`
     gap: 15px;
     padding-top: 65px;
@@ -50,6 +14,7 @@ const Panel = styled.div`
     border-radius: 5px;
     padding: 10px;
     position: relative;
+    padding-top: 25px;
 
     .total {
         position: absolute;
@@ -75,17 +40,26 @@ const Item = styled.div`
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 
-    font-size: 18px;
+    font-size: 16px;
 
     .left {
-        max-width: 60%;
+        max-width: 70%;
         word-break: break-all;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        span {
+            color: #c6c6c6;
+            margin-right: 10px;
+        }
     }
 
     .right {
-        max-width: 40%;
+        max-width: 30%;
         word-break: break-all;
         color: ${(props) => (!props.color ? "black" : props.color)};
     }
@@ -127,4 +101,4 @@ const ButtonBox = styled.div`
     }
 `;
 
-export { Header, HomeContainer, Panel, TransferButton, ButtonBox, Item };
+export { HomeContainer, Panel, TransferButton, ButtonBox, Item };

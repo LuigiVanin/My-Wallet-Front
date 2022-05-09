@@ -62,4 +62,39 @@ const Button = styled.button`
     }
 `;
 
-export { Container, Title, Input, Form, Button };
+const Header = styled.header`
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0;
+    right: 0px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        color: white;
+    }
+
+    nav {
+        height: 60px;
+        width: 92%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    h1 {
+        width: 70%;
+        color: white;
+        font-size: 23px;
+        font-weight: bold;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+`;
+
+export { Container, Title, Input, Form, Button, Header };

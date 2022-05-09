@@ -1,4 +1,4 @@
-import { Header as HeaderBar } from "../styles/pages/home.style";
+import { Header as HeaderBar } from "../styles/components.style";
 import { useNavigate } from "react-router-dom";
 import IonIcon from "@reacticons/ionicons";
 import React, { useContext } from "react";

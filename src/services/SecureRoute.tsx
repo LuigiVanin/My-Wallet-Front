@@ -1,11 +1,8 @@
-import { useContext } from "react";
 import { Navigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
 import { Props } from "../helpers/interfaces";
 
 const SecureRoute = ({ children }: Props) => {
-    const auth = useContext(AuthContext);
-    const currentUser = auth.token;
+    const currentUser = localStorage.getItem("token");
     if (!currentUser) {
         console.log("Não autorizado");
         return <Navigate to="/" replace />;

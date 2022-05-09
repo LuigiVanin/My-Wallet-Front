@@ -10,9 +10,7 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
 
     useEffect(() => {
         const localToken = localStorage.getItem("token");
-        // console.log("USE EFFECT DO APP");
         if (localToken) {
-            // console.log("App provider effect");
             setToken(localToken);
             const config = {
                 headers: {
@@ -21,7 +19,6 @@ const AuthProvider: React.FC<Props> = ({ children }) => {
             };
             const promise = api.get("/user", config);
             promise.then((response) => {
-                // console.log(response);
                 setUser({
                     name: response.data.name,
                     email: response.data.email,

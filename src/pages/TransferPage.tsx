@@ -32,7 +32,6 @@ const TransferPage: React.FC<ITransferPage> = ({ type }) => {
         };
         const promise = api.post("/transfer", { ...transfer }, config);
         promise.then((response) => {
-            console.log(response);
             navigate("/home");
         });
         promise.catch((err) => {
