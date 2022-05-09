@@ -1,5 +1,5 @@
 interface Props {
-    children: JSX.Element | JSX.Element[];
+    children: any | any[];
 }
 
 interface ISignIn {
@@ -42,6 +42,10 @@ interface ITransfer {
     type: TransferType;
 }
 
+interface TransferProps {
+    transfers: any[] | null;
+}
+
 export type {
     ISignIn,
     ISignUp,
@@ -51,4 +55,5 @@ export type {
     IHeader,
     ITransferPage,
     ITransfer,
+    TransferProps,
 };

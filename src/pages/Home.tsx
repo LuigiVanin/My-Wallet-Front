@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import Header from "../components/Header";
-// import { ButtonBox } from "../styles/components.style";
 import {
     HomeContainer as Container,
     TransferButton,
@@ -11,11 +10,12 @@ import IonIcon from "@reacticons/ionicons";
 import api from "../services/api";
 import { AxiosResponse } from "axios";
 import TransfersPanel from "../components/TransfersPanel";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
-    const { user, token } = useContext(AuthContext);
+    const { token } = useContext(AuthContext);
     const [transfers, setTransfers] = useState<any[] | null>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (token) {
@@ -26,36 +26,35 @@ const Home: React.FC = () => {
             };
             const promise = api.get("/transfer", config);
             promise.then((response: AxiosResponse) => {
-                console.log(response);
+                // console.log(response);
                 setTransfers(response.data as any[]);
             });
             promise.catch((err) => {
                 console.log(err);
+                alert("Não autorizado");
+                navigate("/");
             });
-        } else {
-            console.log("NO TOKEN YET");
         }
     }, [token]);
 
-    console.log(user);
     return (
         <>
             <Header />
             <Container>
-                <TransfersPanel />
+                <TransfersPanel transfers={transfers} />
                 <ButtonBox>
                     <Link to="/entrada">
+                        <TransferButton>
+                            <IonIcon name="add-circle-outline" size="large" />
+                            <h1>Nova entrada</h1>
+                        </TransferButton>
+                    </Link>
+                    <Link to="/saida">
                         <TransferButton>
                             <IonIcon
                                 name="remove-circle-outline"
                                 size="large"
                             />
-                            <h1>Nova entrada</h1>
-                        </TransferButton>
-                    </Link>
-                    <Link to="/entrada">
-                        <TransferButton>
-                            <IonIcon name="add-circle-outline" size="large" />
                             <h1>Nova saída</h1>
                         </TransferButton>
                     </Link>

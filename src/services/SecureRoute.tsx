@@ -5,7 +5,7 @@ import { Props } from "../helpers/interfaces";
 
 const SecureRoute = ({ children }: Props) => {
     const auth = useContext(AuthContext);
-    const currentUser = auth?.user;
+    const currentUser = auth.token;
     if (!currentUser) {
         console.log("Não autorizado");
         return <Navigate to="/" replace />;

@@ -7,6 +7,7 @@ import Reset from "./styles/reset.style";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import TransferPage from "./pages/TransferPage";
+import SecureRoute from "./services/SecureRoute";
 
 const App: React.FC = () => {
     return (
@@ -17,12 +18,31 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path="/" element={<SignIn />} />
                     <Route path="/signup" element={<SignUp />} />
-                    <Route path="/home" element={<Home />} />
+                    <Route
+                        path="/home"
+                        element={
+                            <SecureRoute>
+                                <Home />
+                            </SecureRoute>
+                        }
+                    />
                     <Route
                         path="/entrada"
-                        element={<TransferPage type={1} />}
+                        element={
+                            <SecureRoute>
+                                <TransferPage type={1} />
+                            </SecureRoute>
+                        }
                     />
-                    <Route path="/saida" element={<TransferPage type={-1} />} />
+                    <Route
+                        path="/saida"
+                        element={
+                            <SecureRoute>
+                                {" "}
+                                <TransferPage type={-1} />{" "}
+                            </SecureRoute>
+                        }
+                    />
                 </Routes>
             </BrowserRouter>
         </AuthProvider>

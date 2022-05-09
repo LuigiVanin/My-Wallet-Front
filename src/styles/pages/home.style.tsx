@@ -48,6 +48,47 @@ const Panel = styled.div`
     height: calc(80vh - 65px);
     background: white;
     border-radius: 5px;
+    padding: 10px;
+    position: relative;
+
+    .total {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 10px;
+        font-weight: bold;
+        font-size: 21px;
+
+        .value {
+            color: ${(props) => (!props ? "black" : props.color)};
+        }
+    }
+`;
+
+const Item = styled.div`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    font-size: 18px;
+
+    .left {
+        max-width: 60%;
+        word-break: break-all;
+    }
+
+    .right {
+        max-width: 40%;
+        word-break: break-all;
+        color: ${(props) => (!props.color ? "black" : props.color)};
+    }
 `;
 
 const TransferButton = styled.button`
@@ -82,7 +123,8 @@ const ButtonBox = styled.div`
 
     a {
         flex: 1;
+        text-decoration: none;
     }
 `;
 
-export { Header, HomeContainer, Panel, TransferButton, ButtonBox };
+export { Header, HomeContainer, Panel, TransferButton, ButtonBox, Item };
