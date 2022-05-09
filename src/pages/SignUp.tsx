@@ -3,13 +3,20 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ISignUp } from "../helpers/interfaces";
 import api from "../services/api";
-import { Button, Form, Input, Title } from "../styles/components.style";
+import {
+    Button,
+    Form,
+    Input,
+    Title,
+    Spinner,
+} from "../styles/components.style";
 import { SignInContainer as Container } from "../styles/pages/signIn.style";
 
 type SignUpTypes = "name" | "email" | "password" | "password2";
 
 const SignUp: React.FC = () => {
     const [signUpData, setSignUpData] = useState<ISignUp>({} as ISignUp);
+    const [request, setRequest] = useState<boolean>(false);
     const navigate = useNavigate();
 
     const changeSignUp = (event: any) => {
@@ -20,11 +27,14 @@ const SignUp: React.FC = () => {
 
     const signUp = () => {
         const promise = api.post("/sign-up", signUpData);
+        setRequest(true);
         promise.then((response: AxiosResponse) => {
+            setRequest(false);
             return navigate("/");
         });
         promise.catch((err) => {
             alert("Algo de errado no sue formulário");
+            setRequest(false);
             console.log(err);
         });
     };
@@ -62,7 +72,7 @@ const SignUp: React.FC = () => {
                     onChange={changeSignUp}
                     required
                 />
-                <Button>Cadastrar</Button>
+                <Button>{!request ? "Cadastrar" : <Spinner />}</Button>
             </Form>
 
             <Link to="/">Já tem conta? Faça login</Link>

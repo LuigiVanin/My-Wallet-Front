@@ -1,4 +1,10 @@
-import { Title, Input, Form, Button } from "../styles/components.style";
+import {
+    Title,
+    Input,
+    Form,
+    Button,
+    Spinner,
+} from "../styles/components.style";
 import { SignInContainer as Container } from "../styles/pages/signIn.style";
 import { useState, useContext } from "react";
 import { ISignIn } from "../helpers/interfaces";
@@ -9,6 +15,7 @@ import { AxiosResponse } from "axios";
 
 const SignIn: React.FC = () => {
     const [signInData, setSignUpData] = useState<ISignIn>({} as ISignIn);
+    const [request, setRequest] = useState<boolean>(false);
     const navigate = useNavigate();
     const context = useContext(AuthContext);
 
@@ -24,6 +31,7 @@ const SignIn: React.FC = () => {
 
     const login = () => {
         const promise = api.post("sign-in", signInData);
+        setRequest(true);
         promise.then((response: AxiosResponse) => {
             localStorage.setItem("token", response.data.token);
             context.setToken(response.data.token);
@@ -31,10 +39,12 @@ const SignIn: React.FC = () => {
                 name: response.data.name,
                 email: response.data.email,
             });
+            setRequest(false);
             navigate("/home");
         });
         promise.catch((err) => {
             alert("Algum erro ocorreu!");
+            setRequest(false);
             console.log(err);
         });
     };
@@ -62,7 +72,7 @@ const SignIn: React.FC = () => {
                     onChange={changeSignIn}
                     required
                 />
-                <Button>Sign In</Button>
+                <Button>{!request ? "Entrar" : <Spinner />}</Button>
             </Form>
 
             <Link to="/signup">Primeira vez? Cadastre-se</Link>

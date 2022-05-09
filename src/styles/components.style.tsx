@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
     width: 85%;
@@ -56,6 +56,9 @@ const Button = styled.button`
     background-color: #9b4abb;
     transition: all 0.2s ease-in-out;
     font-family: "Raleway", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
         transform: scale(1.01);
@@ -98,4 +101,24 @@ const Header = styled.header`
     }
 `;
 
-export { Container, Title, Input, Form, Button, Header };
+const Spin = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+
+`;
+
+const Spinner = styled.div`
+    width: 30px;
+    height: 30px;
+    border: solid 5px transparent;
+    border-left-color: #ffffff;
+    border-bottom-color: #ffffff;
+    border-radius: 50%;
+    animation: 1.5s linear infinite ${Spin};
+`;
+
+export { Container, Title, Input, Form, Button, Header, Spinner };

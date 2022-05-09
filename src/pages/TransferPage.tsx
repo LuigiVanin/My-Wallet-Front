@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Header from "../components/Header";
 import { AuthContext } from "../context/AuthContext";
-import { Button, Form, Input } from "../styles/components.style";
+import { Button, Form, Input, Spinner } from "../styles/components.style";
 import { TransferContainer } from "../styles/pages/transferPage.style";
 import { ITransferPage, ITransfer } from "../helpers/interfaces";
 import api from "../services/api";
@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 const TransferPage: React.FC<ITransferPage> = ({ type }) => {
     const headerTitle = type === 1 ? "Adicionar Entrada" : "Adicionar Saída";
     const [transfer, setTransfer] = useState<ITransfer>({ type } as ITransfer);
+    const [request, setRequest] = useState<boolean>(false);
     const { token } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -31,11 +32,14 @@ const TransferPage: React.FC<ITransferPage> = ({ type }) => {
             },
         };
         const promise = api.post("/transfer", { ...transfer }, config);
+        setRequest(true);
         promise.then((response) => {
+            setRequest(false);
             navigate("/home");
         });
         promise.catch((err) => {
             console.log(err);
+            setRequest(false);
             alert("alguma coisa errada com o formulário");
         });
     };
@@ -60,7 +64,7 @@ const TransferPage: React.FC<ITransferPage> = ({ type }) => {
                         onChange={changeTransfer}
                         required
                     />
-                    <Button>Adicionar</Button>
+                    <Button>{!request ? "Adicionar" : <Spinner />}</Button>
                 </Form>
             </TransferContainer>
         </>
