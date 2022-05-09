@@ -9,8 +9,7 @@ const TransferItem: React.FC<{ transfer: any }> = ({ transfer }) => {
     return (
         <Item color={color}>
             <div className="left">
-                {" "}
-                <span>{dayjs(transfer.time).format("DD/MM")}</span>{" "}
+                <span>{dayjs(transfer.time).format("DD/MM")}</span>
                 {transfer.title}
             </div>
             <div className="right">

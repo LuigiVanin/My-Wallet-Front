@@ -94,6 +94,7 @@ const Header = styled.header`
         display: inline-block;
         text-overflow: ellipsis;
         white-space: nowrap;
+        font-family: Raleway, sans-serif;
     }
 `;
 

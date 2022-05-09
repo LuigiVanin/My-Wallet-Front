@@ -28,9 +28,11 @@ const Panel = styled.div`
         padding-inline: 10px;
         font-weight: bold;
         font-size: 21px;
+        font-family: Raleway, sans-serif;
 
         .value {
             color: ${(props) => (!props ? "black" : props.color)};
+            font-family: Raleway, sans-serif;
         }
     }
 `;
@@ -51,6 +53,7 @@ const Item = styled.div`
         display: inline-block;
         text-overflow: ellipsis;
         white-space: nowrap;
+        font-family: Raleway, sans-serif;
 
         span {
             color: #c6c6c6;
@@ -62,6 +65,7 @@ const Item = styled.div`
         max-width: 30%;
         word-break: break-all;
         color: ${(props) => (!props.color ? "black" : props.color)};
+        font-family: Raleway, sans-serif;
     }
 `;
 
