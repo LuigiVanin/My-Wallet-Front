@@ -13,8 +13,20 @@ const Panel = styled.div`
     background: white;
     border-radius: 5px;
     padding: 10px;
+    padding-inline: 20px;
     position: relative;
     padding-top: 25px;
+    position: relative;
+
+    .error {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        font-weight: bold;
+        color: #707070;
+    }
 
     .total {
         position: absolute;
@@ -80,6 +92,7 @@ const TransferButton = styled.button`
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
+    cursor: pointer;
 
     h1 {
         font-weight: bold;

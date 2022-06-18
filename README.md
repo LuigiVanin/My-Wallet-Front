@@ -1,46 +1,92 @@
-# Getting Started with Create React App
+<h1 align="center"> My Wallet 💰</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+<img src="./images/mockup.png"/>
 
-## Available Scripts
+</p>
 
-In the project directory, you can run:
+<h3 align="center">
+<a href="https://my-wallet-front-puce.vercel.app/" target="_blank">
+        
+«Acessar Demostração»
 
-### `npm start`
+</a>
+</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Descrição 📎
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p>
+My Wallet é uma aplicação financeira que busca gerenciar transferências monetárias do usuário logado. Para utilizar aplicação é necessário logar-se e criar entradas e saídas. Essa aplicação é feita em conjunto com a <a href="https://github.com/LuigiVanin/MyWallet-back"> api do my wallet.</a>
+</p>
 
-### `npm test`
+<h3 align="center">
+<a href="https://github.com/LuigiVanin/MyWallet-back" target="_blank">
+        
+«Acessar Back-End»
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</a>
+</h3>
 
-### `npm run build`
+## Funcionalidades 🚀
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Global
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    -   [x] Banco de dados remoto Mongo.
+    -   [x] Deploy público via Vercel.
+    -   [x] Layout Mobile.
+    -   [x] Deploy do backend com Heroku.
+    -   [x] Login.
+    -   [x] Sign up.
+    -   [x] Autenticação com token.
+    -   [x] Armazenamento do token via localstorage.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Painel principal
 
-### `npm run eject`
+    -   [x] Visualização de todas as transferências do usário.
+    -   [x] Transações negativas devem ser negativas e positivas devem ser verdes.
+    -   [x] Datas de cada transferência.
+    -   [x] Soma total dos valores de transferência.
+    -   [x] Botão de entrada e saída.
+    -   [x] Botão de logout.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-   Painel de adição de transferência
+    -   [x] Saída e entrada de valores.
+    -   [x] Botão de retorno.
+    -   [x] Transações negativas devem ser negativas e positivas devem ser verdes.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Ferramentas Utilizadas 🛠️
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<p align="center">
+    <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
+    <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
+    <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
+    <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
+    <img src="https://img.shields.io/badge/Git-E34F26?style=for-the-badge&logo=git&logoColor=white" />
+    <img src="https://img.shields.io/badge/Vercel-100000?style=for-the-badge&logo=vercel&logoColor=white" />
+    <img src="https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white" />
+    <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" />
+    <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white">
+    <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" />
+</p>
 
-## Learn More
+## Outras Ferramentas 📦
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   [Axios](https://axios-http.com/).
+-   [Days.js](https://day.js.org/).
+-   [Chalk](https://www.npmjs.com/package/chalk).
+-   [Joi](https://joi.dev/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Entre em contato 📞
+
+<br>
+
+<p align="center">
+<a href="https://www.linkedin.com/in/luis-felipe-vanin-martins-5a5b38215">
+<img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=blue">
+</a>
+<a href="mailto:luisfvanin2@gmail.com">
+<img src="https://img.shields.io/badge/Gmail:%20luisfvanin2@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white">
+</a>
+</p>

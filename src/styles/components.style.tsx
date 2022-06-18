@@ -78,6 +78,7 @@ const Header = styled.header`
 
     svg {
         color: white;
+        cursor: pointer;
     }
 
     nav {

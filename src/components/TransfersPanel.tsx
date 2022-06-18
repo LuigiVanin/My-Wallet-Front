@@ -17,9 +17,13 @@ const TransfersPanel: React.FC<TransferProps> = ({ transfers }) => {
 
     return (
         <Panel color={color}>
-            {transfers?.map((item) => {
-                return <TransferItem transfer={item} key={item._id} />;
-            })}
+            {!transfers?.length ? (
+                <p className="error">Nenhuma transferência aqui!</p>
+            ) : (
+                transfers?.map((item) => {
+                    return <TransferItem transfer={item} key={item._id} />;
+                })
+            )}
 
             <div className="total">
                 <h1>TOTAL:</h1>
